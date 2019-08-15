@@ -1,0 +1,25 @@
+{
+  "name": "plantilla-canvas",
+  "version": "1.0.0",
+  "description": "My perfect Nuxt.js project",
+  "author": "kusillus",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "cookie-universal-nuxt": "^2.0.17",
+    "konva": "^4.0.4",
+    "nuxt": "^2.0.0",
+    "sweetalert2": "^8.15.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0"
+  }
+}
