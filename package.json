@@ -16,7 +16,9 @@
     "cookie-universal-nuxt": "^2.0.17",
     "konva": "^4.0.4",
     "nuxt": "^2.0.0",
-    "sweetalert2": "^8.15.3"
+    "sweetalert2": "^8.15.3",
+    "vue-cropperjs": "^4.0.0",
+    "vue-konva": "^2.0.7"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",

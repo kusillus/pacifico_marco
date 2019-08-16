@@ -37,6 +37,7 @@ export default {
   */
   plugins: [
     { src: '@/plugins/sweet_alert.js', ssr: false},
+    { src: '@/plugins/vue-cropper.js', ssr: false},
   ],
   /*
   ** Nuxt.js dev-modules
