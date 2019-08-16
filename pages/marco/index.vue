@@ -27,11 +27,12 @@
                 :img-style="{ 'width': '400px', 'height': '400px' }">
             </vue-cropper>
         </div>
-        <div>
-            <div v-for="(item, i) in list_window" :key="i" @click="setNewWindow(item)">
-                <img style="width: 400px" ref='marco' :src="item.base_image" :alt="item.name">
+        <div class="d-flex">
+            <div v-for="(item, i) in list_window" :key="i" @click="setNewWindow(item)" class="m-2">
+                <img style="width: 200px; border:solid 1px gray" :src="item.base_image" :alt="item.name">
             </div>
         </div>
+        <img style="width: 200px; border:solid 1px gray" ref='marco' :src="base_image">
         <div class="text-center" v-if="imgSrc != ''">
             <div v-if="cropImg">
                 <img :src="cropImg" style="width: 200px; border: 1px solid gray" alt="Cropped Image" />        
@@ -61,15 +62,15 @@
         cropImg: '',
         list_window: [
             { name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
-            { name: 'Marco Dos', base_image: require('@/assets/img/marco.png')},
-            { name: 'Marco Tres', base_image: require('@/assets/img/marco.png')},
-            { name: 'Marco Cuatro', base_image: require('@/assets/img/marco.png')}
+            { name: 'Marco Tres', base_image: require('@/assets/img/marco1.png')},
         ],
         base_image: '',
       };
     },
     methods: {
         setNewWindow(item) {
+            let vm = this
+            vm.base_image = item.base_image
 
         },
       setImage(e) {
