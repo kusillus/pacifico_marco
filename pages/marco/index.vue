@@ -1,6 +1,9 @@
 <template>
     <div class="container pt-5">
         <div>
+            <h4>
+                Carga tu imagen de perfil
+            </h4>
             <form>
                 <div class="custom-file">
                     <input class="custom-file-input" type="file" name="image" accept="image/*"
@@ -27,12 +30,17 @@
                 :img-style="{ 'width': '400px', 'height': '400px' }">
             </vue-cropper>
         </div>
-        <div class="d-flex">
-            <div v-for="(item, i) in list_window" :key="i" @click="setNewWindow(item)" class="m-2">
-                <img style="width: 200px; border:solid 1px gray" :src="item.base_image" :alt="item.name">
+        <div class="">
+            <h4>
+                Selecciona una plantilla para continuar
+            </h4>
+            <div class="d-flex">
+                <div v-for="(item, i) in list_window" :key="i" @click="setNewWindow(item)" class="m-2">
+                    <img style="width: 200px; border:solid 1px gray" :src="item.base_image" :alt="item.name">
+                </div>
             </div>
         </div>
-        <img style="width: 200px; border:solid 1px gray" ref='marco' :src="base_image">
+        <img class="d-none" style="width: 200px; border:solid 1px gray" ref='marco' :src="base_image">
         <div class="text-center" v-if="imgSrc != ''">
             <div v-if="cropImg">
                 <img :src="cropImg" style="width: 200px; border: 1px solid gray" alt="Cropped Image" />        
