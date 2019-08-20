@@ -2,13 +2,13 @@
   font-family: 'Foco';
   font-style: normal;
   font-weight: normal;
-  src: local("Foco"), url("font/Foco.woff") format("woff"); }
+  src: local("Foco"), url("../font/Foco.woff") format("woff"); }
 
 @font-face {
   font-family: 'FocoBold_0';
   font-style: normal;
   font-weight: normal;
-  src: local("FocoBold_0"), url("font/FocoBold_0.woff") format("woff"); }
+  src: local("FocoBold_0"), url("../font/FocoBold_0.woff") format("woff"); }
 
 html, body {
   width: 100%;
