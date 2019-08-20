@@ -2,13 +2,13 @@
   font-family: 'Foco';
   font-style: normal;
   font-weight: normal;
-  src: local("Foco"), url("font/Foco.woff") format("woff"); }
+  src: local("Foco"), url("../font/Foco.woff") format("woff"); }
 
 @font-face {
   font-family: 'FocoBold_0';
   font-style: normal;
   font-weight: normal;
-  src: local("FocoBold_0"), url("font/FocoBold_0.woff") format("woff"); }
+  src: local("FocoBold_0"), url("../font/FocoBold_0.woff") format("woff"); }
 
 html, body {
   width: 100%;
@@ -51,7 +51,7 @@ p {
   align-items: center; }
   .contenedor_header img {
     height: auto;
-    width: 200px; }
+    width: 125px; }
   .contenedor_header a {
     color: #fff;
     text-decoration: none;
@@ -236,16 +236,3 @@ p {
     .contenedor_footer p a {
       text-decoration: none;
       color: #fff; }
-
-.contenedor_header img {
-  width: 150px; }
-
-@media (max-width: 991.98px) {
-  .slider {
-    height: 250px;
-    padding: 20px; }
-    .slider h1 {
-      text-align: center;
-      font-size: 30px; }
-  .contenedor_formulario {
-    min-height: 300px; } }

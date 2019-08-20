@@ -217,23 +217,3 @@ p {
         }
     }
 }
-
-.contenedor_header {
-    img {
-        width: 150px;
-    }
-}
-
-@media (max-width:991.98px) {
-    .slider {
-        height: 250px;
-        padding: 20px;
-        h1 {
-            text-align: center;
-            font-size: 30px;
-        }
-    }
-    .contenedor_formulario {
-        min-height: 300px;
-    }
-}
