@@ -62,7 +62,8 @@ export default {
                     })
                     // vm.$store.commit('SET_USER',token)
                     // TODO: Redireccionamos al dashboard
-                    vm.$router.push('/marco')
+                    vm.$router.push('/')
+                    this.$store.commit('setLogin', true)
                 })
             } else {
                 Swal.fire({

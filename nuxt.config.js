@@ -4,6 +4,12 @@ export default {
   /*
   ** Headers of the page
   */
+  env: {
+    service_url: process.env.NODE_ENV === 'production' ? 'http://creatosdesign.com/sorteo/' : 'http://localhost:3003/sorteo/'
+  },
+  router: {
+    base: process.env.NODE_ENV === 'production' ? '/demos/pacifico_foto/' : ''
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [

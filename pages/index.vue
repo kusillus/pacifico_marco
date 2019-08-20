@@ -3,20 +3,26 @@
 		<div class="slider">
 			<img :src="require('@/assets/img/slider.jpg')">
 			<h1>¡Elige el diseño que mas te guste para tu foto!</h1>
-		</div>    
+		</div>
 		<div class="container texto_inicial">
 			<p>Con esta aplicación podrás añadirle un diseño al marco de tu foto de perfil para tu plataforma de workplace. Esperamos que te sea de utilidad.</p>
 		</div>
+		<div>
+			<vue-marco/>
+		</div>  
   	</div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Marco from '~/components/Marco.vue'
 
 export default {
-  components: {
-    Logo
-  }
+	// layout: 'other',
+	components: {
+		'vue-marco': Marco
+	},
+	methods:{
+	}
 }
 </script>
 
