@@ -17,6 +17,7 @@
 import Marco from '~/components/Marco.vue'
 
 export default {
+	middleware: 'loginAuth',
 	// layout: 'other',
 	components: {
 		'vue-marco': Marco

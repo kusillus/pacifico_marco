@@ -40,18 +40,18 @@
                 :img-style="{ 'width': '400px', 'height': '400px' }">
             </vue-cropper>
         </div>
-        <img class="d-none" ref='marco' :src="base_image">
         <div class="text-center" v-if="imgSrc != ''">
-            <div v-if="cropImg">
-                <img :src="cropImg" style="width: 200px; border: 1px solid gray" alt="Cropped Image" />        
-            </div>
-            <div class="py-5">
+            <div class="pb-5">
                 <button class="btn btn-primary " @click="cropImage">Recortar Imagen</button>
                 <a v-if="cropImg" :href="cropImg" download class="btn btn-primary">
                     Descargar Imagen
                 </a>
             </div>
+            <div v-if="cropImg">
+                <img :src="cropImg" style="width: 200px; border: 1px solid gray" alt="Cropped Image" />        
+            </div>
         </div>
+        <img class="d-none" ref='marco' :src="base_image">
   </div>
 
 </template>

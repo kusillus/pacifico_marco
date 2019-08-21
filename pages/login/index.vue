@@ -52,8 +52,8 @@ export default {
             let vm = this
             if(vm.eval_payload(payload)) {
                 // TODO: Servicio para el login
-                axios.get('https://pokeapi.co/api/v2/pokemon/ditto/')
-                .then(response => {
+                // axios.get('https://pokeapi.co/api/v2/pokemon/ditto/')
+                // .then(response => {
                     let token = 'Alexander-token'
                     // TODO: Seteamos el token que nos responde el servicio.
                     vm.$cookies.set('user-token', token, {
@@ -62,9 +62,10 @@ export default {
                     })
                     // vm.$store.commit('SET_USER',token)
                     // TODO: Redireccionamos al dashboard
-                    vm.$router.push('/')
                     this.$store.commit('setLogin', true)
-                })
+                    window.location.href = '/'
+                    // vm.$router.push('/')
+                // })
             } else {
                 Swal.fire({
 					type: 'error',
