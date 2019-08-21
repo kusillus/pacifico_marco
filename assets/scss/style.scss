@@ -24,7 +24,12 @@ html, body {
     width: 100%;
     overflow-x: hidden;
 }
-
+.swal2-title{
+    display: block;
+}
+.swal2-title::after{
+  display: none;
+}
 body {
     font-family: $font_normal;
     overflow-x: hidden;
