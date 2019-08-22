@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import axios    from 'axios'
+import Swal     from 'sweetalert2';
 export default {
 	mounted() {
 		if(this.$cookies.get('user-token')){
@@ -31,26 +33,27 @@ export default {
 	},
 	data() {
 		return {
-			// showQuitBtn: false
-			// rand: Math.random()
 		}
 	},
 	computed: {
 		showQuitBtn() {
-			
-			// return this.$store.getLogin()
 			return this.$store.getters.getLogin
 		}
 	},
 	methods: {
-		quitDashboard() {
-			let vm = this
-			// Salimos del sistema y borramos las cookie
-			vm.$cookies.removeAll()
-			vm.$router.push({path: '/login/'})
-			this.$store.commit('setLogin', false)
-			// this.rand = Math.random()
-		},
+		quitDashboard(payload) {
+            let vm = this
+			// TODO: Servicio para el logout
+			axios({
+				url: process.env.service_url + 'logout',
+				method: 'post',
+			}).then(response => {
+				let res = response.data
+				vm.$cookies.removeAll()
+				this.$store.commit('setLogin', false)
+				window.location.href = '/login'
+			})
+        }
 	}
 
 }

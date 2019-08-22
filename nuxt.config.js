@@ -5,7 +5,7 @@ export default {
   ** Headers of the page
   */
   env: {
-    service_url: process.env.NODE_ENV === 'production' ? 'http://creatosdesign.com/sorteo/' : 'http://localhost:3003/sorteo/'
+    service_url: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com/api/' : 'http://localhost:3003/api/'
   },
   router: {
     base: process.env.NODE_ENV === 'production' ? '' : ''

@@ -57,29 +57,49 @@
 </template>
 
 <script>
-  import VueCropper from 'vue-cropperjs';
-  import 'cropperjs/dist/cropper.css';
-  export default {
+import VueCropper 	from 'vue-cropperjs';
+import 					 'cropperjs/dist/cropper.css';
+import axios    	from 'axios'
+import Swal     	from 'sweetalert2';
+
+export default {
     //   layout: 'other',
     components: {
-      VueCropper,
+      	VueCropper,
     },
     data() {
-      return {
-        imgSrc: '',
-        cropImg: '',
-        list_window: [
-            { id: 'mod_1',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
-            { id: 'mod_2',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
-            { id: 'mod_3',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
-            { id: 'mod_4',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
-            { id: 'mod_5',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')}
-        ],
-        base_image: '',
-        active_window: null,
-      };
-    },
+      	return {
+			imgSrc: '',
+			cropImg: '',
+			list_window: [
+				// { id: 'mod_1',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
+				// { id: 'mod_2',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
+				// { id: 'mod_3',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
+				// { id: 'mod_4',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')},
+				// { id: 'mod_5',name: 'Marco Uno', base_image: require('@/assets/img/marco.png')}
+			],
+			base_image: '',
+			active_window: null,
+      	}
+	},
+	mounted() {
+		this.getListTemplates()
+	},
     methods: {
+        getListTemplates() {
+            // TODO: Servicio para obtener la lista de plantillas cargadas.
+            let vm = this
+            // vm.listTemplates = vm.fake_response
+
+            axios({
+                url: process.env.service_url + 'all_plantillas',
+                method: 'get',
+            }).then(response => {
+                let res = response.data
+                vm.list_window =  res.data
+            })
+
+        },
         getClassActive(item) {
             let vm = this
             return vm.active_window === item.id ? 'active_window': ''
@@ -90,29 +110,34 @@
             vm.base_image = item.base_image
 
         },
-      setImage(e) {
-        const file = e.target.files[0];
-        if (!file.type.includes('image/')) {
-          alert('Please select an image file');
-          return;
-        }
-        if (typeof FileReader === 'function') {
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            this.imgSrc = event.target.result;
-            // rebuild cropperjs with the updated source
-            this.$refs.cropper.replace(event.target.result);
-          };
-          reader.readAsDataURL(file);
-        } else {
-          alert('Sorry, FileReader API not supported');
-        }
-      },
-      cropImage() {
-        // get image data for post processing, e.g. upload or setting image src
-        // this.cropImg = this.$refs.cropper.getCroppedCanvas().toDataURL();
-        this.cropImg = this.getRoundedCanvas(this.$refs.cropper.getCroppedCanvas()).toDataURL()
-      },
+		setImage(e) {
+			const file = e.target.files[0];
+			if (!file.type.includes('image/')) {
+				alert('Please select an image file');
+				return;
+			}
+			if (typeof FileReader === 'function') {
+				const reader = new FileReader();
+				reader.onload = (event) => {
+					this.imgSrc = event.target.result;
+					// rebuild cropperjs with the updated source
+					this.$refs.cropper.replace(event.target.result);
+				};
+				reader.readAsDataURL(file);
+			} else {
+				// alert('Sorry, FileReader API not supported');
+				Swal.fire({
+					type: 'error',
+					title: 'Ops!',
+					html: 'Tu navegador no soporta esta funcionalidad, utiliza google chrome o firefox.',
+				})
+			}
+		},
+      	cropImage() {
+			// get image data for post processing, e.g. upload or setting image src
+			// this.cropImg = this.$refs.cropper.getCroppedCanvas().toDataURL();
+			this.cropImg = this.getRoundedCanvas(this.$refs.cropper.getCroppedCanvas()).toDataURL()
+      	},
         getRoundedCanvas(sourceCanvas) {
             var canvas = document.createElement('canvas');
             var context = canvas.getContext('2d');
@@ -132,7 +157,7 @@
             return canvas;
         },
     },
-  };
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

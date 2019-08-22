@@ -86,15 +86,15 @@ export default {
         getListTemplates() {
             // TODO: Servicio para obtener la lista de plantillas cargadas.
             let vm = this
-            vm.listTemplates = vm.fake_response
+            // vm.listTemplates = vm.fake_response
 
-            // axios({
-            //     url: process.env.service_url + 'get_list_templates',
-            //     method: 'get',
-            // }).then(response => {
-            //     let res = response.data
-            //     vm.listTemplates =  res.data
-            // })
+            axios({
+                url: process.env.service_url + 'all_plantillas',
+                method: 'get',
+            }).then(response => {
+                let res = response.data
+                vm.listTemplates =  res.data
+            })
 
         },
         updateTemplates(id) {
@@ -130,7 +130,7 @@ export default {
                 })
             } else {
                 axios({
-                    url: process.env.service_url + 'upload_template',
+                    url: process.env.service_url + 'plantillas',
                     method: 'post',
                     data: {
                         imagen: file,
