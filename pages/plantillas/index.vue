@@ -14,7 +14,7 @@
                 </h4>
                 <div class="d-flex overflow-auto">
                     <div v-for="(item, i) in listTemplates" :key="i" class="m-2 wrapper_window">
-                        <img style="width: 100%;" :src="item.img" :alt="item.id">
+                        <img style="width: 100%;" :src="getValidURL(item.path)" :alt="item.name">
                         <button class="btn btn-outline-danger outline w-100" @click="updateTemplates(item.id)">
                             <i class="fas fa-trash"></i>
                             Eliminar
@@ -46,7 +46,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" @click="uploadImagen(imagen)">Guardar</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" @class="modalShowHide(false)">Cerrar</button>
+                        <button type="button" class="btn btn-danger" ref="closemodal" data-dismiss="modal" @class="modalShowHide(false)">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -66,18 +66,15 @@ export default {
             file: null,
             imagen: '',
             listTemplates: [],
-            fake_response: [
-                { id: '01', img: 'https://steamuserimages-a.akamaihd.net/ugc/882987975149445228/B5E33B44E74882792E808FF181FF09AB15DDE33E/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true'},
-                { id: '02', img: 'https://steamuserimages-a.akamaihd.net/ugc/882987975149445228/B5E33B44E74882792E808FF181FF09AB15DDE33E/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true'},
-                { id: '03', img: 'https://steamuserimages-a.akamaihd.net/ugc/882987975149445228/B5E33B44E74882792E808FF181FF09AB15DDE33E/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true'},
-            ]
-
         }
     },
 	mounted() {
         this.getListTemplates()
 	},
 	methods:{
+        getValidURL(path) {
+            return process.env.service_img + path
+        },
         modalShowHide(value){
             let vm = this
             vm.imagen=''
@@ -137,8 +134,10 @@ export default {
                     }
                 }).then(response => {
                     let res = response.data
-                    vm.modalShowHide(false)
+                    vm.$refs.closemodal.click()
                     vm.getListTemplates()
+                    vm.modalShowHide(false)
+                    
                 })
             }
 

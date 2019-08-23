@@ -5,7 +5,8 @@ export default {
   ** Headers of the page
   */
   env: {
-    service_url: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com/api/' : 'http://localhost:3003/api/'
+    service_url: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com/api/' : 'http://localhost:3003/api/',
+    service_img: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com' : 'http://localhost:3003'
   },
   router: {
     base: process.env.NODE_ENV === 'production' ? '' : ''
@@ -58,6 +59,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     'cookie-universal-nuxt',
+    '@nuxtjs/proxy',
   ],
   /*
   ** Axios module configuration
@@ -68,6 +70,10 @@ export default {
   /*
   ** Build configuration
   */
+  proxy: {
+      target: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com' : 'http://localhost:3003',
+
+  },
   build: {
     /*
     ** You can extend webpack config here
