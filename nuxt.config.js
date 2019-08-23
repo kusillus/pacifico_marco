@@ -6,7 +6,7 @@ export default {
   */
   env: {
     service_url: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com/api/' : 'http://localhost:3003/api/',
-    service_img: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com' : 'http://localhost:3003'
+    service_img: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com/api/public/' : 'http://localhost:3003'
   },
   router: {
     base: process.env.NODE_ENV === 'production' ? '' : ''

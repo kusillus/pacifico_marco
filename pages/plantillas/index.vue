@@ -39,7 +39,7 @@
                                         type="file"
                                         class="file-input"
                                         aria-label="Subir imagen"
-                                        accept="image/x-png,image/gif,image/jpeg"
+                                        accept="image/x-png"
                                         @change="setNewTemplates">
                                 </label>
                         </div>

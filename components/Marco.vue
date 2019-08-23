@@ -51,7 +51,7 @@
                 <img :src="cropImg" style="width: 200px; border: 1px solid gray" alt="Cropped Image" />        
             </div>
         </div>
-        <img class="" ref='marco' :src="base_image">
+        <img class="d-none" ref='marco' :src="base_image">
   </div>
 
 </template>
