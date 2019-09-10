@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Foco';
   font-style: normal;
   font-weight: normal;
@@ -118,7 +118,8 @@ p {
   align-items: center; }
 
 .formulario {
-  padding: 50px; }
+  padding-top: 50px;
+  padding-bottom: 50px;}
   .formulario form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -200,6 +201,323 @@ p {
           opacity: .5; }
 
 ::-webkit-input-placeholder {
+  color: #fff; }
+
+:-ms-input-placeholder {
+  color: #fff; }
+
+::-ms-input-placeholder {
+  color: #fff; }
+
+::placeholder {
+  color: #fff; }
+
+:-ms-input-placeholder {
+  color: #fff; }
+
+::-ms-input-placeholder {
+  color: #fff; }
+
+.contenedor_footer {
+  padding: 20px;
+  background: -webkit-radial-gradient(center, ellipse, #0082c3 0%, #002e52 100%);
+  background: -o-radial-gradient(center, ellipse, #0082c3 0%, #002e52 100%);
+  background: radial-gradient(ellipse at center, #0082c3 0%, #002e52 100%); }
+  .contenedor_footer p {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    margin: 0; }
+    .contenedor_footer p a {
+      text-decoration: none;
+      color: #fff; }
+
+.contenedor_header img {
+  width: 150px; }
+
+@media (max-width: 991.98px) {
+  .slider {
+    height: 250px;
+    padding: 20px; }
+    .slider h1 {
+      text-align: center;
+      font-size: 30px; }
+  .contenedor_formulario {
+    min-height: 300px; } }
+
+
+
+.strech-width-panel{
+  max-width: calc(100vw - 30px);
+}
+ */
+
+
+
+
+
+@font-face {
+  font-family: 'Foco';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Foco"), url("../font/Foco.woff") format("woff"); }
+
+@font-face {
+  font-family: 'FocoBold_0';
+  font-style: normal;
+  font-weight: normal;
+  src: local("FocoBold_0"), url("../font/FocoBold_0.woff") format("woff"); }
+
+@font-face {
+  font-family: 'cursiva';
+  font-style: normal;
+  font-weight: normal;
+  src: local("cursiva"), url("../font/cursiva.woff") format("woff"); }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; }
+
+body {
+  font-family: "Foco";
+  overflow-x: hidden;
+  color: #308fcf; }
+
+h1, h2, h3 {
+  font-family: "FocoBold_0";
+  color: #308fcf; }
+
+h1:after, h2:after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #308fcf;
+  margin: 10px 0 15px 0; }
+
+p {
+  font-family: "Foco";
+  font-size: 22px; }
+
+.contenedor_header {
+  background: #308fcf;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: 120px; }
+  .contenedor_header .logo_header {
+    height: 100px;
+    width: auto;
+    position: relative;
+    z-index: 10; }
+  .contenedor_header .texto_centro {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .contenedor_header .texto_centro p {
+      color: #fff;
+      font-style: italic;
+      margin: 0;
+      text-align: center; }
+      .contenedor_header .texto_centro p strong {
+        font-family: 'cursiva';
+        font-weight: normal;
+        font-size: 29px;
+        margin: 0 8px; }
+        .contenedor_header .texto_centro p strong span {
+          font-size: 18px;
+          position: relative;
+          top: -5px; }
+  .contenedor_header .fondo {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
+
+@media (max-width: 700px) {
+  .contenedor_header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 200px; }
+    .contenedor_header .texto_centro {
+      position: relative; }
+      .contenedor_header .texto_centro p {
+        font-size: 18px; }
+        .contenedor_header .texto_centro p strong {
+          font-family: 'cursiva';
+          font-weight: normal;
+          font-size: 24px;
+          margin: 0 8px; }
+          .contenedor_header .texto_centro p strong span {
+            font-size: 14px;
+            position: relative;
+            top: -5px; } }
+
+.slider {
+  height: 500px;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: -1; }
+  .slider h1 {
+    margin: 0;
+    color: #fff; }
+    .slider h1:after {
+      display: none !important; }
+
+.slider_login {
+  height: 200px; }
+
+.texto_inicial {
+  padding: 50px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .texto_inicial p {
+    max-width: 500px;
+    text-align: center;
+    margin: 0; }
+
+.contenedor_formulario {
+  min-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.formulario {
+  padding: 50px; }
+  .formulario form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .formulario form .texto {
+      margin: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .formulario form .texto label {
+        margin: 0;
+        height: 50px;
+        width: 50px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 10px 0 0 10px;
+        background: #308fcf; }
+        .formulario form .texto label i {
+          color: #fff;
+          font-size: 20px;
+          position: relative;
+          width: 20px; }
+          .formulario form .texto label i:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 38px;
+            right: -13px;
+            top: -9px;
+            background: #fff; }
+      .formulario form .texto input {
+        background: #308fcf;
+        height: 50px;
+        font-size: 20px;
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 0 10px 10px 0;
+        color: #fff; }
+    .formulario form .boton {
+      margin-top: 20px; }
+      .formulario form .boton input {
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        background: #308fcf;
+        font-size: 22px;
+        font-family: "FocoBold_0";
+        color: #fff;
+        text-decoration: none;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s; }
+        .formulario form .boton input:hover {
+          background: #308fcf;
+          color: #fff;
+          opacity: .5; }
+
+::-webkit-input-placeholder {
   /* Firefox, Chrome, Opera */
   color: #fff; }
 
@@ -225,9 +543,7 @@ p {
 
 .contenedor_footer {
   padding: 20px;
-  background: -webkit-radial-gradient(center, ellipse, #0082c3 0%, #002e52 100%);
-  background: -o-radial-gradient(center, ellipse, #0082c3 0%, #002e52 100%);
-  background: radial-gradient(ellipse at center, #0082c3 0%, #002e52 100%); }
+  background: #308fcf; }
   .contenedor_footer p {
     color: #fff;
     text-align: center;

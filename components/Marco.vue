@@ -4,7 +4,7 @@
             <h4>
                 1. Selecciona una plantilla para continuar
             </h4>
-            <div class="d-flex overflow-auto">
+            <div class="d-flex overflow-auto strech-width-panel" >
                 <div v-for="(item, i) in list_window" :key="i" @click="setNewWindow(item)" class="m-2 wrapper_window" :class="getClassActive(item)">
                     <img style="width: 100%;" :ref="item.name" :src="item.path" :alt="item.name">
                 </div>
@@ -175,6 +175,13 @@
 
 .cropper-crop-box, .cropper-view-box {
     border-radius: 50%;
+    padding: 35px;
+    position: relative;
+    img{
+      position: absolute;
+      top: -35px;
+      left: -35px;
+    }
 }
 
 .cropper-view-box {
@@ -192,5 +199,6 @@
     border: solid 2px #0082c3;
   }
 }
+
 </style>
 

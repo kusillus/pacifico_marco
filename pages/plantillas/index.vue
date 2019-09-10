@@ -12,7 +12,7 @@
                 <h4>
                     Listado de plantillas cargadas.
                 </h4>
-                <div class="d-flex overflow-auto">
+                <div class="d-flex overflow-auto strech-width-panel">
                     <div v-for="(item, i) in listTemplates" :key="i" class="m-2 wrapper_window">
                         <img style="width: 100%;" :src="getValidURL(item.path)" :alt="item.name">
                         <button class="btn btn-outline-danger outline w-100" @click="updateTemplates(item.id)">

@@ -1,11 +1,11 @@
 <template>
   	<div class="">
 		<div class="slider">
-			<img :src="require('@/assets/img/slider.jpg')">
-			<h1>¡Elige el diseño que mas te guste para tu foto!</h1>
-		</div>
+        	<img :src="require('@/assets/img/slider.jpg')">
+        	<h1>¡Personaliza tu foto! </h1>
+    	</div>
 		<div class="container texto_inicial">
-			<p>Con esta aplicación podrás añadirle un diseño al marco de tu foto de perfil para tu plataforma de workplace. Esperamos que te sea de utilidad.</p>
+			<p>Sigamos viviendo nuestro propósito. Elige uno de estos marcos para tu foto de perfil de Workplace</p>
 		</div>
 		<div>
 			<vue-marco/>

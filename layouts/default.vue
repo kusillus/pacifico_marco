@@ -1,20 +1,20 @@
 <template>
 	<div class="grid_template_wrapper">
 		<header class="contenedor_header">
-			<nuxt-link to="/">
-				<img :src="require('@/assets/img/logo_blanco.png')">
+			<img :src="require('@/assets/img/header.svg')" class="fondo">
+			<img class="logo_header" :src="require('@/assets/img/logo.svg')">
+			<div class="texto_centro">
+				<p>Protegemos <strong><span>La</span>felicidad</strong>de las personas</p>
+			</div>
+		</header>
+			<!-- <nuxt-link v-show="!showQuitBtn" to="/login">
+				<i class="fas fa-user"></i>
+				Ingresar
 			</nuxt-link>
-			<span>
-				<nuxt-link v-show="!showQuitBtn" to="/login">
-					<i class="fas fa-user"></i>
-					Ingresar
-				</nuxt-link>
-				<span v-show="showQuitBtn" class="pl-2 btn-quit-app" @click="quitDashboard()" style="">
-					<i class="fas fa-sign-out-alt"></i>
-					Salir
-				</span>
-			</span>
-    	</header>
+			<span v-show="showQuitBtn" class="pl-2 btn-quit-app" @click="quitDashboard()" style="">
+				<i class="fas fa-sign-out-alt"></i>
+				Salir
+			</span> -->
     	<nuxt />
 		<footer class="contenedor_footer">
 			<p>Copyright © Derechos reservados <strong>Pacífico Seguros</strong> . Desarrollado por <strong><a href="https://creatosdesign.com">CREATOS DESIGN</a></strong></p>

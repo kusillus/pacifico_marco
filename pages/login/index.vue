@@ -3,18 +3,20 @@
         <div class="slider slider_login">
             <img :src="require('@/assets/img/slider.jpg')">
         </div>
+
         <div class="container contenedor_formulario">
             <div class="formulario">
                 <form action="">
                     <div class="texto">
                         <label for="nombre"><i class="fas fa-user"></i></label>
-                        <input type="text" name="nombre" v-model="payload.dni" placeholder="DNI">
+                        <input type="text" name="nombre" v-model="payload.dni" placeholder="Usuario">
                     </div>
 
                     <div class="texto">
                         <label for="dni"><i class="fas fa-lock"></i></label>
                         <input type="password" name="dni" v-model="payload.password" placeholder="Contraseña">
                     </div>
+
                     <div class="boton">
                         <input type="submit" value="Ingresar" @click.prevent="login_user(payload)">
                     </div>

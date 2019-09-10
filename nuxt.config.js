@@ -5,21 +5,31 @@ export default {
   ** Headers of the page
   */
   env: {
-    service_url: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com/api/' : 'http://localhost:3003/api/',
-    service_img: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com/api/public/' : 'http://localhost:3003'
+    service_url: process.env.NODE_ENV === 'production' ? '/api/' : 'http://localhost:3003/api/',
+    service_img: process.env.NODE_ENV === 'production' ? '/api/public/' : 'http://localhost:3003'
   },
   router: {
     base: process.env.NODE_ENV === 'production' ? '' : ''
   },
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Pacífico Seguros | Marcos de Fotos',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=EDGE' },
+      { 'http-equiv': 'content-type', content: 'text/html; charset=utf-8' },
+      { 'http-equiv': 'ImageResize', content: 'no' },
+      { 'http-equiv': 'ImageToolbar', content: 'no' },
+
+      { name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' },
+      { name: 'autor', content: 'pacifico.com.pe' },
+      { name: 'publisher', content: 'pacifico.com.pe' },
+      { name: 'copyright', content: 'pacifico.com.pe' },
+      { name: 'host', content: 'pacifico.com.pe' },
+      { hid: 'description', name: 'description', content: 'Con esta aplicación podrás añadirle un diseño al marco de tu foto de perfil para tu plataforma de workplace. Esperamos que te sea de utilidad.' },
+      { hid: 'og_description', property: 'og:description', content: 'Con esta aplicación podrás añadirle un diseño al marco de tu foto de perfil para tu plataforma de workplace. Esperamos que te sea de utilidad.' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css' }
     ],
@@ -58,8 +68,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'cookie-universal-nuxt',
-    '@nuxtjs/proxy',
+    'cookie-universal-nuxt'
   ],
   /*
   ** Axios module configuration
@@ -70,10 +79,6 @@ export default {
   /*
   ** Build configuration
   */
-  proxy: {
-      target: process.env.NODE_ENV === 'production' ? 'http://marcodefotospacifico.com' : 'http://localhost:3003',
-
-  },
   build: {
     /*
     ** You can extend webpack config here
